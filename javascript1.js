@@ -35,13 +35,16 @@ $(document).ready(function () {
 
 function tlacitko(data) {
     $.each(data, function (key, value) {
-        $("#namesRadio").append("<input type='radio' id='" + "name" + key + "' name='user' value='" + value["ID"] + "'/><label for='" + "name" + key + "'>" + value["name"] + "</label><br>");
+        $("#namesRadio").append("<input type='radio' id='" + "name" + key + "' name='user' value='" + value["ID"] + "'/>
+                                <label for='" + "name" + key + "'>" + value["name"] + "</label><br>");
     });
 }
 
 function posuvnik(data) {
     $.each(data, function (key, value) {
-        $("#typesSliders").append("<div class='sliderDiv'><label for='" + "slider" + key + "'>" + value["typ"] + "</label><div class='sliderDiv'><label id='" + "slidertext" + key + "'>0</label><input type='range' min='0' max='10' value='0' class='slider' id='" + "slider" + key + "'></div></div><br>");
+        $("#typesSliders").append("<div class='sliderDiv'><label for='" + 
+                                  "slider" + key + "'>" + value["typ"] + "</label><div class='sliderDiv'><label id='" + "slidertext" + key + "'>
+                                  0</label><input type='range' min='0' max='10' value='0' class='slider' id='" + "slider" + key + "'></div></div><br>");
 
         let slider = document.getElementById("slider" + key);
         slider.addEventListener("input", function() {
@@ -64,10 +67,13 @@ function showList(event){
         processData: false,
         success: function(data){
             $("#table").remove()
-            $("body").append("<table id='table'><tr><th>Název</th><th>Jméno</th><th>Počet</th></tr></table>")
+            $("body").append("<table id='table'><tr>
+                             <th>Název</th><th>Jméno</th>
+                             <th>Počet</th></tr></table>")
 
             $.each(data, function (key, value) {
-                $("#table").append("<tr><td>" + value[0] + "</td><td>" + value[2] + "</td><td>" + value[1] + "</td></tr>");
+                $("#table").append("<tr><td>" + value[0] + "</td>
+                                   <td>" + value[2] + "</td><td>" + value[1] + "</td></tr>");
             });
         },
         error: function () {
