@@ -1,0 +1,108 @@
+/* Základní resetování stylů */
+body, h1, p, div, label, input, button, table {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+/* Styling pro formu */
+#form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Styling pro radio buttony */
+#namesRadio {
+    margin-bottom: 20px;
+}
+
+#namesRadio input[type='radio'] {
+    margin-right: 10px;
+}
+
+/* Styling pro slidere */
+.sliderDiv {
+    margin-bottom: 20px;
+}
+
+.slider {
+    width: 100%; /* Zajistí, že slider využije plnou šířku kontejneru */
+}
+
+/* Styling pro tabulku */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+/* Styling pro tlačítka */
+button, input[type="submit"] {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #218838;
+}
+
+/* Responzivní design */
+@media (max-width: 768px) {
+    #form {
+        padding: 10px;
+    }
+
+    table, th, td {
+        font-size: 0.9em;
+    }
+
+    button, input[type="submit"] {
+        width: 100%; /* Umožní tlačítkům zabírat celou šířku na menších obrazovkách */
+        padding: 15px;
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    #namesRadio input[type='radio'] {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .sliderDiv {
+        margin-bottom: 15px;
+    }
+
+    .slider {
+        width: 100%;
+    }
+}
